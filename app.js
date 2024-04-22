@@ -20,7 +20,7 @@ app.use('/api/v1/projects', projectRouter)
 app.use(notFound)
 app.use(errorHandlerMiddleware) 
 
-const port = process.env.PORT || 3000
+const port = 5000
 
 const start = async ()=> {
     try {
@@ -34,4 +34,3 @@ const start = async ()=> {
 }
 
 start() 
-a

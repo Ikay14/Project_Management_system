@@ -32,16 +32,16 @@ const updateTask = asyncWrapper (async (req, res, next) => {
 //  Deleting a Task
 const deleteTask = asyncWrapper (async ( req, res, next) => {
     const taskId = req.params.id
-    const task = await Project.findByIdAndDelete({__id: taskId})
+    const task = await Task.findByIdAndDelete({__id: taskId})
 
     if(!task){
         return next(createCustomError(`No task with ID ${taskId}`))
     }
-    res.status(200).json({ task })
+    res.status(200).json({ task })ync
 })  
 
 // Fetching a single task
-const GetASingleTask = asyncWrapper ( async (req, res, next) => {
+const ggetASingleTask = asyncWrapper ( async (req, res, next) => {
     const taskId = req.params.id 
     const task = await Project.findOne({__id: taskId})
 
@@ -59,5 +59,5 @@ module.exports = {
     getAllTask,
     updateTask,
     deleteTask,
-    GetASingleTask
+    getASingleTask
 }
